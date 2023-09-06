@@ -18,7 +18,7 @@
 // 0 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 
-use std::collections::{BTreeSet, HashSet};
+use std::collections::HashSet;
 
 pub struct Solution {}
 
@@ -27,7 +27,7 @@ impl Solution {
         if nums.len() <= 1 {
             return nums.len() as i32;
         }
-        let mut nums = nums.into_iter().collect::<HashSet<i32>>();
+        let nums = nums.into_iter().collect::<HashSet<i32>>();
         let mut max_len = 1;
         for &v in nums.iter() {
             if nums.contains(&(v - 1)) {
