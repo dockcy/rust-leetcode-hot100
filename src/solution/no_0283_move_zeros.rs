@@ -42,7 +42,6 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use core::num;
 
     use super::*;
 
