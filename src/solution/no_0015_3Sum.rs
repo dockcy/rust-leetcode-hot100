@@ -32,7 +32,7 @@
 
 pub struct Solution {}
 
-use std::collections::HashMap;
+
 impl Solution {
     pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
         if nums.len() < 3 {
@@ -51,7 +51,7 @@ impl Solution {
             // j can only move to right
             let mut j = i + 1;
             // k can only move to left
-            let mut k = nums.len() - 1;
+            let mut k: usize = nums.len() - 1;
             // j doesn't need to move the array's end
             while j < k {
                 // ensure there's no duplicate answer
