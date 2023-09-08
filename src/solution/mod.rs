@@ -5,3 +5,4 @@ mod no_0283_move_zeros;
 mod no_0011_container_with_most_water;
 mod no_0015_3Sum;
 mod no_0042_trapping_rain_water;
+mod no_0003_length_of_longest_substring;
