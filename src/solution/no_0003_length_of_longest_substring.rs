@@ -30,24 +30,16 @@ pub struct Solution {}
 use std::collections::HashMap;
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
-        if s.len() <= 1 {
-            return s.len() as i32;
+        use std::cmp::max;
+        let mut last: [i32; 128] = [-1; 128];
+        let mut left = -1;
+        let mut ans = 0;
+        for (i, v) in s.chars().enumerate() {
+            left = max(left, last[v as usize]);
+            last[v as usize] = i as i32;
+            ans = max(ans, (i as i32) - left);
         }
-        let chars = s.chars().collect::<Vec<_>>();
-        let mut map = HashMap::new();
-        let mut i = 0;
-        let mut max_len = 0;
-        while i < chars.len() {
-            if let Some(&index) = map.get(&chars[i]) {
-                max_len = max_len.max(map.len());
-                i = index + 1;
-                map.clear();
-            } else {
-                map.insert(&chars[i], i);
-                i += 1;
-            }
-        }
-        max_len.max(map.len()) as i32
+        return ans;
     }
 }
 
@@ -60,10 +52,9 @@ mod test {
         let s1 = "au";
         let s3 = "";
         let s4 = "abcabcbb";
-        assert_eq!(6,Solution::length_of_longest_substring(s.to_string()));
-        assert_eq!(2,Solution::length_of_longest_substring(s1.to_string()));
-        assert_eq!(0,Solution::length_of_longest_substring(s3.to_string()));
-        assert_eq!(3,Solution::length_of_longest_substring(s4.to_string()));
-        
+        assert_eq!(6, Solution::length_of_longest_substring(s.to_string()));
+        assert_eq!(2, Solution::length_of_longest_substring(s1.to_string()));
+        assert_eq!(0, Solution::length_of_longest_substring(s3.to_string()));
+        assert_eq!(3, Solution::length_of_longest_substring(s4.to_string()));
     }
 }
