@@ -27,13 +27,7 @@
 
 pub struct Solution {}
 
-use std::{
-    collections::{HashMap, HashSet},
-    hash::Hash,
-};
-
 impl Solution {
-
     pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
         let mut cnt = vec![0; 128];
         p.chars().for_each(|c| cnt[c as usize] += 1);
@@ -56,8 +50,6 @@ impl Solution {
         }
         ans
     }
-
-   
 }
 
 #[cfg(test)]
@@ -68,7 +60,9 @@ mod test {
     fn test() {
         let s = "cbaebabacd";
         let p = "abc";
-        assert_eq!(vec![0,6],Solution::find_anagrams(s.to_string(), p.to_string()));
-        
+        assert_eq!(
+            vec![0, 6],
+            Solution::find_anagrams(s.to_string(), p.to_string())
+        );
     }
 }
