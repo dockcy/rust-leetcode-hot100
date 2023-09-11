@@ -27,7 +27,7 @@ impl Solution {
         let mut cnt = 0;
         for (index,_v) in nums.iter().enumerate() {
             let mut sum = 0;
-            for m in nums[0..=index].iter(){
+            for m in nums[index..nums.len()].iter(){
                 sum += m;
                 if sum == k{
                     cnt += 1;
