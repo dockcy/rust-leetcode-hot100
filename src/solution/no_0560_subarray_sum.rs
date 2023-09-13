@@ -25,14 +25,15 @@ pub struct Solution {}
 impl Solution {
     pub fn subarray_sum(nums: Vec<i32>, k: i32) -> i32 {
         let mut cnt = 0;
-        for (index,_v) in nums.iter().enumerate() {
-            let mut sum = 0;
-            for m in nums[index..nums.len()].iter(){
-                sum += m;
-                if sum == k{
-                    cnt += 1;
-                }
+        let mut pre_sum = 0;
+        let mut subarray_map = std::collections::HashMap::new();
+        subarray_map.insert(0, 1);
+        for v in nums {
+            pre_sum += v;
+            if let Some(nums) = subarray_map.get(&(pre_sum - k)) {
+                cnt += nums;
             }
+            *subarray_map.entry(pre_sum).or_insert(0) += 1;
         }
         cnt
     }
