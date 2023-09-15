@@ -59,7 +59,17 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test() {
+    fn test_reverse_list() {
+        let mut head = ListNode::new(1);
+        head.next = Some(Box::new(ListNode::new(2)));
+        head.next.as_mut().unwrap().next = Some(Box::new(ListNode::new(3)));
 
+
+        let new_head = Solution::reverse_list(Some(Box::new(head)));
+
+        assert_eq!(new_head.as_ref().unwrap().val, 3);
+        assert_eq!(new_head.as_ref().unwrap().next.as_ref().unwrap().val, 2);
+        assert_eq!(new_head.as_ref().unwrap().next.as_ref().unwrap().next.as_ref().unwrap().val, 1);
     }
 }
+
