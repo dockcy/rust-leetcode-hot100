@@ -11,3 +11,4 @@ mod no_0560_subarray_sum;
 mod no_0239_max_sliding_window;
 mod no_0206_reverse_list;
 mod no_0035_search_insert;
+mod no_0070_climb_stairs;
