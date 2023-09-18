@@ -12,3 +12,4 @@ mod no_0239_max_sliding_window;
 mod no_0206_reverse_list;
 mod no_0035_search_insert;
 mod no_0070_climb_stairs;
+mod no_0121_max_profit;
