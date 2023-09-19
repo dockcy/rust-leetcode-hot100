@@ -13,3 +13,4 @@ mod no_0206_reverse_list;
 mod no_0035_search_insert;
 mod no_0070_climb_stairs;
 mod no_0121_max_profit;
+mod no_0118_pascal_triangle;
