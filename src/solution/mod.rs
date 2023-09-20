@@ -14,3 +14,4 @@ mod no_0035_search_insert;
 mod no_0070_climb_stairs;
 mod no_0121_max_profit;
 mod no_0118_pascal_triangle;
+mod no_0020_valid_parentheses;
