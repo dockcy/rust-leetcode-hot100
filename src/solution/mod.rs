@@ -17,3 +17,4 @@ mod no_0118_pascal_triangle;
 mod no_0020_valid_parentheses;
 mod no_0136_single_number;
 mod no_0169_majority_element;
+mod no_0234_is_palindrome_linklist;

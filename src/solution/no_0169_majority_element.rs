@@ -33,6 +33,7 @@ impl Solution {
         for x in nums {
             if cnt == 0 {
                 candidate = x;
+                cnt += 1;
             } else if x == candidate {
                 cnt += 1;
             } else {
@@ -50,5 +51,7 @@ mod tests {
     #[test]
     fn test() {
         assert_eq!(2, Solution::majority_element(vec![2, 2, 1, 1, 1, 2, 2]));
+        assert_eq!(3, Solution::majority_element(vec![3,3,4]));
+        assert_eq!(9, Solution::majority_element(vec![10,9,9,9,10]));
     }
 }
